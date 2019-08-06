@@ -51,7 +51,7 @@ def find_coordinates_by_image_identify(driver, imgsch):
 
 def click_according_to_coordinate(driver, x, y, left_click=True):
     """
-    根据坐标执行点击操作
+    根据坐标执行点击操作(web only)
     :param driver:
     :param x: 页面x坐标
     :param y: 页面y坐标
@@ -64,5 +64,19 @@ def click_according_to_coordinate(driver, x, y, left_click=True):
         else:
             ActionChains(driver).move_by_offset(x, y).context_click().perform()
         ActionChains(driver).move_by_offset(-x, -y).perform()  # 将鼠标位置恢复到移动前的位置
+    except Exception as msg:
+        print(msg)
+
+
+def tap_according_to_coordinate(driver, x, y):
+    """
+    根据坐标执行点击操作(Mobile device only)
+    :param driver:
+    :param x: 页面x坐标
+    :param y: 页面y坐标
+    :return:
+    """
+    try:
+        driver.tap([(x, y)])
     except Exception as msg:
         print(msg)
