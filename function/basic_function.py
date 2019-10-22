@@ -25,8 +25,10 @@ def calc(*numbers): #可变参数，*args是可变参数，args接收的是一�
         sum = sum + n*n
     return sum
 
+
 def person(name, age, **kw): #关键字参数，**kw是关键字参数，kw接收的是一个dict
     print('name: ', name, ' age: ', age, ' other: ', kw)
+
 #print(my_abs(2))
 #print(my_abs('A'))
 # print(power(5,1))
