@@ -33,4 +33,6 @@ def person(name, age, **kw): #关键字参数，**kw是关键字参数，kw接�
 # print(add_end())
 # print(add_end())
 # print(calc(1,2,3))
+
+
 print(person('Bob', 35, city='Beijing'))
