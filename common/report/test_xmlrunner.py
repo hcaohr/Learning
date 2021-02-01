@@ -1,6 +1,7 @@
 import random
 import unittest
 import xmlrunner
+from config import CONST
 
 
 class TestSequenceFunctions(unittest.TestCase):
@@ -19,7 +20,7 @@ class TestSequenceFunctions(unittest.TestCase):
         self.assertEqual(self.seq, list(range(10)))
 
         # should raise an exception for an immutable sequence
-        self.assertRaises(TypeError, random.shuffle, (1,2,3))
+        self.assertRaises(TypeError, random.shuffle, (1, 2, 3))
 
     def test_choice(self):
         element = random.choice(self.seq)
@@ -34,7 +35,7 @@ class TestSequenceFunctions(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(
-        testRunner=xmlrunner.XMLTestRunner(output='test-reports'),
+        testRunner=xmlrunner.XMLTestRunner(output=CONST.REPORT_PATH),
         # these make sure that some options that are not applicable
         # remain hidden from the help menu.
         failfast=False, buffer=False, catchbreak=False)
