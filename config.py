@@ -8,5 +8,7 @@ class CONST:
 
         CSV_PATH = str(PROJECT_PATH / Path('data/csv/example.csv'))
 
+        REPORT_PATH = str(PROJECT_PATH / Path('reports'))
+
     except Exception as msg:
         print(msg)
