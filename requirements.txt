@@ -5,3 +5,7 @@ pytest
 selenium
 openpyxl
 requests
+pyaudio
+tqdm
+colorthief
+opencv-python
