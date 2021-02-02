@@ -23,6 +23,18 @@ class Browser:
 
         return backendPerformance_calc, frontendPerformance_calc
 
+    def scroll_to_element(self, ele_or_locator, position="center"):
+        """
+        在网页上滑动到元素
+        :param ele_or_locator: 元素
+        :param position: 滑动到的位置（"start", "center", "end", 或 "nearest"），默认是滑动到元素中间位置
+        :return:
+        """
+        if isinstance(ele_or_locator, tuple):
+            pass
+        else:
+            self.driver.execute_script('arguments[0].scrollIntoView({block: %s});' % position, ele_or_locator)
+
 
 if __name__ == '__main__':
     hyperlink = "http://lambdatest.com"
